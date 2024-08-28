@@ -6,6 +6,7 @@
       :todos="todos"
       :meta="meta"
     ></example-component>
+    Route: {{ getRoutePath() }}
   </q-page>
 </template>
 
@@ -50,6 +51,12 @@ export default defineComponent({
     };
 
     return { todos, meta };
+  },
+
+  methods: {
+    getRoutePath(): string {
+      return this.$route.fullPath;
+    }
   }
 });
 </script>
